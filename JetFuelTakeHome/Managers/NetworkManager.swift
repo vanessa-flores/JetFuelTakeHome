@@ -5,7 +5,7 @@
 //  Created by Vanessa Flores on 12/15/20.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
     
@@ -48,6 +48,26 @@ class NetworkManager {
                 completion(.failure(error))
             }
             
+        }
+        
+        task.resume()
+    }
+    
+    func downloadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
+        
+        guard let url = URL(string: urlString) else {
+            print("Invalid image url")
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in            
+            guard error == nil, let response = response as? HTTPURLResponse, response.statusCode == 200,
+                  let data = data, let image = UIImage(data: data) else {
+                print("Error getting image")
+                return
+            }
+            
+            completion(image)
         }
         
         task.resume()
