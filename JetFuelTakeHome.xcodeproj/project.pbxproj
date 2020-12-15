@@ -9,22 +9,20 @@
 /* Begin PBXBuildFile section */
 		A3BFA6C325891E0B008C2BCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA6C225891E0B008C2BCB /* AppDelegate.swift */; };
 		A3BFA6C525891E0B008C2BCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA6C425891E0B008C2BCB /* SceneDelegate.swift */; };
-		A3BFA6C725891E0B008C2BCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA6C625891E0B008C2BCB /* ViewController.swift */; };
-		A3BFA6CA25891E0B008C2BCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3BFA6C825891E0B008C2BCB /* Main.storyboard */; };
 		A3BFA6CC25891E0D008C2BCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3BFA6CB25891E0D008C2BCB /* Assets.xcassets */; };
 		A3BFA6CF25891E0D008C2BCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3BFA6CD25891E0D008C2BCB /* LaunchScreen.storyboard */; };
+		A3BFA6DD25892064008C2BCB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA6DC25892064008C2BCB /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A3BFA6BF25891E0B008C2BCB /* JetFuelTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetFuelTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BFA6C225891E0B008C2BCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3BFA6C425891E0B008C2BCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A3BFA6C625891E0B008C2BCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A3BFA6C925891E0B008C2BCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3BFA6CB25891E0D008C2BCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3BFA6CE25891E0D008C2BCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3BFA6D025891E0D008C2BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3BFA6D725891E2D008C2BCB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A3BFA6DC25892064008C2BCB /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +58,10 @@
 			children = (
 				A3BFA6C225891E0B008C2BCB /* AppDelegate.swift */,
 				A3BFA6C425891E0B008C2BCB /* SceneDelegate.swift */,
-				A3BFA6C625891E0B008C2BCB /* ViewController.swift */,
-				A3BFA6C825891E0B008C2BCB /* Main.storyboard */,
 				A3BFA6CB25891E0D008C2BCB /* Assets.xcassets */,
 				A3BFA6CD25891E0D008C2BCB /* LaunchScreen.storyboard */,
 				A3BFA6D025891E0D008C2BCB /* Info.plist */,
+				A3BFA6DC25892064008C2BCB /* FeedViewController.swift */,
 			);
 			path = JetFuelTakeHome;
 			sourceTree = "<group>";
@@ -128,7 +125,6 @@
 			files = (
 				A3BFA6CF25891E0D008C2BCB /* LaunchScreen.storyboard in Resources */,
 				A3BFA6CC25891E0D008C2BCB /* Assets.xcassets in Resources */,
-				A3BFA6CA25891E0B008C2BCB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +135,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3BFA6C725891E0B008C2BCB /* ViewController.swift in Sources */,
 				A3BFA6C325891E0B008C2BCB /* AppDelegate.swift in Sources */,
+				A3BFA6DD25892064008C2BCB /* FeedViewController.swift in Sources */,
 				A3BFA6C525891E0B008C2BCB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,14 +144,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A3BFA6C825891E0B008C2BCB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A3BFA6C925891E0B008C2BCB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A3BFA6CD25891E0D008C2BCB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -298,7 +286,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.risingdevhabits.JetFuelTakeHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,7 +305,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.risingdevhabits.JetFuelTakeHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
