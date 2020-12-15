@@ -12,6 +12,8 @@
 		A3BFA6CC25891E0D008C2BCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3BFA6CB25891E0D008C2BCB /* Assets.xcassets */; };
 		A3BFA6CF25891E0D008C2BCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3BFA6CD25891E0D008C2BCB /* LaunchScreen.storyboard */; };
 		A3BFA6DD25892064008C2BCB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA6DC25892064008C2BCB /* FeedViewController.swift */; };
+		A3BFA6E42589381D008C2BCB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA6E32589381D008C2BCB /* NetworkManager.swift */; };
+		A3BFA6E725893AF0008C2BCB /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA6E625893AF0008C2BCB /* FeedItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		A3BFA6D025891E0D008C2BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3BFA6D725891E2D008C2BCB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A3BFA6DC25892064008C2BCB /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A3BFA6E32589381D008C2BCB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A3BFA6E625893AF0008C2BCB /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				A3BFA6CD25891E0D008C2BCB /* LaunchScreen.storyboard */,
 				A3BFA6D025891E0D008C2BCB /* Info.plist */,
 				A3BFA6DC25892064008C2BCB /* FeedViewController.swift */,
+				A3BFA6E32589381D008C2BCB /* NetworkManager.swift */,
+				A3BFA6E625893AF0008C2BCB /* FeedItem.swift */,
 			);
 			path = JetFuelTakeHome;
 			sourceTree = "<group>";
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3BFA6E42589381D008C2BCB /* NetworkManager.swift in Sources */,
 				A3BFA6C325891E0B008C2BCB /* AppDelegate.swift in Sources */,
 				A3BFA6DD25892064008C2BCB /* FeedViewController.swift in Sources */,
+				A3BFA6E725893AF0008C2BCB /* FeedItem.swift in Sources */,
 				A3BFA6C525891E0B008C2BCB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
