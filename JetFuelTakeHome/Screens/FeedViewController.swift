@@ -9,15 +9,23 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
+    // MARK: - Properties
+    
     var feedItems: [FeedItem] = []
+    
+    //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .systemRed
+        
+        view.backgroundColor = .systemBackground
+        
+        configureNavigationBar()
         
         loadFeedItems()
     }
+    
+    // MARK: - Network Call
 
     private func loadFeedItems() {
         NetworkManager.shared.getFeed { [weak self] result in
@@ -31,4 +39,15 @@ class FeedViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - UI Configuration
+    
+    private func configureNavigationBar() {
+//        let appearance = UINavigationBarAppearance()
+//        appearance.backgroundColor = .systemBackground
+//        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "PLUGS"
+    }
+    
 }
