@@ -1,11 +1,20 @@
 //
-//  FeedItem.swift
+//  Campaigns.swift
 //  JetFuelTakeHome
 //
 //  Created by Vanessa Flores on 12/15/20.
 //
 
 import Foundation
+
+struct Campaign: Codable {
+    
+    let campaignItems: [FeedItem]
+    
+    enum CodingKeys: String, CodingKey {
+        case campaignItems = "campaigns"
+    }
+}
 
 struct FeedItem: Codable {
     
@@ -37,14 +46,5 @@ struct MediaItem: Codable {
         case downloadUrl = "download_url"
         case trackingLink = "tracking_link"
         case mediaType = "media_type"
-    }
-}
-
-struct Campaign: Codable {
-    
-    let campaignItems: [FeedItem]
-    
-    enum CodingKeys: String, CodingKey {
-        case campaignItems = "campaigns"
     }
 }
