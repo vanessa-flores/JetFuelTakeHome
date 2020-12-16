@@ -12,6 +12,8 @@ class NetworkManager {
     static let shared = NetworkManager()
     let baseURL = "http://www.plugco.in/public/"
     
+    let cache = NSCache<NSString, UIImage>()
+    
     private init() {}
     
     func getFeed(completion: @escaping (Result<[FeedItem], Error>) -> Void) {
@@ -54,18 +56,27 @@ class NetworkManager {
     }
     
     func downloadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
+        let cacheKey = NSString(string: urlString)
+        if let image = cache.object(forKey: cacheKey) {
+            completion(image)
+            return
+        }
         
         guard let url = URL(string: urlString) else {
             print("Invalid image url")
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in            
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self else { return }
+            
             guard error == nil, let response = response as? HTTPURLResponse, response.statusCode == 200,
                   let data = data, let image = UIImage(data: data) else {
                 print("Error getting image")
                 return
             }
+            
+            self.cache.setObject(image, forKey: cacheKey)
             
             completion(image)
         }

@@ -11,6 +11,8 @@ class JFImageView: UIImageView {
 
     // MARK: - Properties
     
+    let cache = NetworkManager.shared.cache
+    
     // MARK: - Initializers
         
     override init(frame: CGRect) {
