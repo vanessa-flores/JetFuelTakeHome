@@ -52,7 +52,8 @@ class FeedItemCell: UITableViewCell {
     }
     
     private func configureCollectionView() {
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout(in: self))
+        collectionView.backgroundColor = .systemGray6
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -68,19 +69,32 @@ class FeedItemCell: UITableViewCell {
         ])
     }
     
+    private func createCollectionViewLayout(in view: UIView) -> UICollectionViewFlowLayout {
+        let padding: CGFloat = 16
+        let itemHeight: CGFloat = 260
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        flowLayout.itemSize = CGSize(width: 100, height: itemHeight)
+        
+        return flowLayout
+    }
+    
     // MARK: - Helpers
     
     func set(feedItem: FeedItem) {
         feedItemHeader.setFeedItem(feedItem)
         self.feedItem = feedItem
     }
+    
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension FeedItemCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return feedItem?.mediaObjects.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

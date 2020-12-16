@@ -27,6 +27,8 @@ class CoverPhotoImageView: UIImageView {
     // MARK: - UI Configuration
         
     private func configure() {
+        layer.cornerRadius = 5
+        clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
     }
 

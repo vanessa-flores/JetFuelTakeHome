@@ -23,6 +23,7 @@
 		A3BFA727258994A9008C2BCB /* CoverPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA726258994A9008C2BCB /* CoverPhotoImageView.swift */; };
 		A3BFA72B258994D8008C2BCB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA72A258994D8008C2BCB /* UIImageView+Ext.swift */; };
 		A3BFA73125899780008C2BCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA73025899780008C2BCB /* Constants.swift */; };
+		A3BFA735258ACBE1008C2BCB /* JFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA734258ACBE0008C2BCB /* JFButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		A3BFA726258994A9008C2BCB /* CoverPhotoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPhotoImageView.swift; sourceTree = "<group>"; };
 		A3BFA72A258994D8008C2BCB /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		A3BFA73025899780008C2BCB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A3BFA734258ACBE0008C2BCB /* JFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				A3BFA707258970D6008C2BCB /* ImageViews */,
 				A3BFA706258970D1008C2BCB /* UIViews */,
 				A3BFA704258970BD008C2BCB /* Cells */,
+				A3BFA734258ACBE0008C2BCB /* JFButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				A3BFA70225896F76008C2BCB /* FeedItemHeaderView.swift in Sources */,
 				A3BFA72B258994D8008C2BCB /* UIImageView+Ext.swift in Sources */,
 				A3BFA6DD25892064008C2BCB /* FeedViewController.swift in Sources */,
+				A3BFA735258ACBE1008C2BCB /* JFButton.swift in Sources */,
 				A3BFA6F125894603008C2BCB /* Campaigns.swift in Sources */,
 				A3BFA73125899780008C2BCB /* Constants.swift in Sources */,
 				A3BFA7242589933E008C2BCB /* MediaPreviewCell.swift in Sources */,

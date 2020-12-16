@@ -12,9 +12,9 @@ class MediaPreviewCell: UICollectionViewCell {
     // MARK: - Views
     
     var coverPhotoImageView = CoverPhotoImageView(frame: .zero)
-    var playButton = UIButton(frame: .zero)
-    var copyLinkButton = UIButton(frame: .zero)
-    var downloadButton = UIButton(frame: .zero)
+    var playButton = JFButton(image: SFSymbols.play!, roundedCorners: [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
+    var copyLinkButton = JFButton(image: SFSymbols.link!, roundedCorners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+    var downloadButton = JFButton(image: SFSymbols.download!, roundedCorners: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner])
     
     // MARK: - Properties
     
@@ -55,40 +55,39 @@ class MediaPreviewCell: UICollectionViewCell {
     
     private func configurePlayButton() {
         addSubview(playButton)
-        playButton.setImage(SFSymbols.play, for: .normal)
-        playButton.translatesAutoresizingMaskIntoConstraints = false
+        playButton.tintColor = .white
+        playButton.backgroundColor = .clear
+//        playButton.setImage(SFSymbols.play, for: .normal)
+//        playButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             playButton.centerYAnchor.constraint(equalTo: coverPhotoImageView.centerYAnchor),
-            playButton.centerXAnchor.constraint(equalTo: coverPhotoImageView.centerXAnchor),
-            playButton.heightAnchor.constraint(equalToConstant: 50),
-            playButton.widthAnchor.constraint(equalToConstant: 50)
+            playButton.centerXAnchor.constraint(equalTo: coverPhotoImageView.centerXAnchor)
+//            playButton.heightAnchor.constraint(equalToConstant: 50),
+//            playButton.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
     
     private func configureCopyLinkButton() {
         addSubview(copyLinkButton)
-        copyLinkButton.setImage(SFSymbols.link, for: .normal)
-        copyLinkButton.translatesAutoresizingMaskIntoConstraints = false
+        copyLinkButton.setBorder()
+        copyLinkButton.tintColor = .systemGray
         
         NSLayoutConstraint.activate([
-            copyLinkButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 10),
-            copyLinkButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            copyLinkButton.widthAnchor.constraint(equalToConstant: 50),
-            copyLinkButton.heightAnchor.constraint(equalToConstant: 50)
+            copyLinkButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 16),
+            copyLinkButton.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         ])
     }
     
     private func configureDownloadButton() {
         addSubview(downloadButton)
-        downloadButton.setImage(SFSymbols.download, for: .normal)
-        downloadButton.translatesAutoresizingMaskIntoConstraints = false
-        
+        downloadButton.setBorder()
+        downloadButton.tintColor = .systemGray
+
         NSLayoutConstraint.activate([
-            downloadButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 10),
-            downloadButton.leadingAnchor.constraint(equalTo: copyLinkButton.trailingAnchor),
-            downloadButton.widthAnchor.constraint(equalToConstant: 50),
-            downloadButton.heightAnchor.constraint(equalToConstant: 50)
+            downloadButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 16),
+            downloadButton.leadingAnchor.constraint(equalTo: copyLinkButton.trailingAnchor, constant: -1),
+            downloadButton.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
     
