@@ -35,14 +35,15 @@ class FeedItemHeaderView: UIView {
     private func configureImageView() {
         addSubview(imageView)
         
-        let size: CGFloat = 70
+        let imageSize: CGFloat = 70
         let padding: CGFloat = 16
         
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: padding),
-            imageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: padding),
-            imageView.heightAnchor.constraint(equalToConstant: size),
-            imageView.widthAnchor.constraint(equalToConstant: size)
+            imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
+            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding),
+            imageView.heightAnchor.constraint(equalToConstant: imageSize),
+            imageView.widthAnchor.constraint(equalToConstant: imageSize)
         ])
     }
     

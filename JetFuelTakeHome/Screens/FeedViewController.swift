@@ -57,7 +57,7 @@ class FeedViewController: UIViewController {
         view.addSubview(tableView)
                 
         tableView.frame = view.bounds
-        tableView.rowHeight = 82
+        tableView.rowHeight = 400
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self

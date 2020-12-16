@@ -16,6 +16,10 @@ class MediaPreviewCell: UICollectionViewCell {
     var copyLinkButton = UIButton(frame: .zero)
     var downloadButton = UIButton(frame: .zero)
     
+    // MARK: - Properties
+    
+    static let reuseId = "MediaPreviewCell"
+    
     // MARK: - Initializers
     
     override init(frame: CGRect) {
