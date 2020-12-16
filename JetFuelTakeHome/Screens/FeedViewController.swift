@@ -47,10 +47,9 @@ class FeedViewController: UIViewController {
     // MARK: - UI Configuration
     
     private func configureNavigationBar() {
-//        let appearance = UINavigationBarAppearance()
-//        appearance.backgroundColor = .systemBackground
-//        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.prefersLargeTitles = true
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.standardAppearance = appearance
         navigationItem.title = "PLUGS"
     }
     
