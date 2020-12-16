@@ -12,10 +12,8 @@ class FeedItemHeaderView: UIView {
     // MARK: - Properties
     
     let imageView = JFImageView(frame: .zero)
-    let titleLabel = JFTitleLabel(fontSize: 16)
-    let secondaryLabel = JFSecondaryTitleLabel(fontSize: 12, textColor: .systemGreen)
-    
-    let padding: CGFloat = 16
+    let titleLabel = JFTitleLabel(fontSize: 22)
+    let secondaryLabel = JFSecondaryTitleLabel(fontSize: 17, textColor: .systemGreen)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +35,8 @@ class FeedItemHeaderView: UIView {
     private func configureImageView() {
         addSubview(imageView)
         
-        let size: CGFloat = 50
+        let size: CGFloat = 70
+        let padding: CGFloat = 16
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: padding),
@@ -51,10 +50,10 @@ class FeedItemHeaderView: UIView {
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: padding),
+            titleLabel.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 6),
             titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 12),
-            titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -padding),
-            titleLabel.heightAnchor.constraint(equalToConstant: 18)
+            titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            titleLabel.heightAnchor.constraint(equalToConstant: 24)
         ])
     }
     
@@ -62,10 +61,10 @@ class FeedItemHeaderView: UIView {
         addSubview(secondaryLabel)
         
         NSLayoutConstraint.activate([
-            secondaryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 12),
-            titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -padding),
-            titleLabel.heightAnchor.constraint(equalToConstant: 18)
+            secondaryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            secondaryLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 12),
+            secondaryLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            secondaryLabel.heightAnchor.constraint(equalToConstant: 19),
         ])
     }
     
