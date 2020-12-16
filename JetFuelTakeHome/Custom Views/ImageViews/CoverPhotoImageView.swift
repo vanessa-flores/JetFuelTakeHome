@@ -1,5 +1,5 @@
 //
-//  JFImageView.swift
+//  CoverPhotoImageView.swift
 //  JetFuelTakeHome
 //
 //  Created by Vanessa Flores on 12/15/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JFImageView: UIImageView {
+class CoverPhotoImageView: UIImageView {
 
     // MARK: - Properties
     
@@ -27,8 +27,6 @@ class JFImageView: UIImageView {
     // MARK: - UI Configuration
         
     private func configure() {
-        layer.cornerRadius = 20
-        clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
     }
 

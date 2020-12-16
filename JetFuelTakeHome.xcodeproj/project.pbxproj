@@ -19,6 +19,10 @@
 		A3BFA70E2589742B008C2BCB /* JFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA70D2589742B008C2BCB /* JFTitleLabel.swift */; };
 		A3BFA71125897569008C2BCB /* JFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA71025897569008C2BCB /* JFSecondaryTitleLabel.swift */; };
 		A3BFA71D25897E07008C2BCB /* FeedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA71C25897E07008C2BCB /* FeedItemCell.swift */; };
+		A3BFA7242589933E008C2BCB /* MediaPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA7232589933E008C2BCB /* MediaPreviewCell.swift */; };
+		A3BFA727258994A9008C2BCB /* CoverPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA726258994A9008C2BCB /* CoverPhotoImageView.swift */; };
+		A3BFA72B258994D8008C2BCB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA72A258994D8008C2BCB /* UIImageView+Ext.swift */; };
+		A3BFA73125899780008C2BCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BFA73025899780008C2BCB /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		A3BFA70D2589742B008C2BCB /* JFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTitleLabel.swift; sourceTree = "<group>"; };
 		A3BFA71025897569008C2BCB /* JFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		A3BFA71C25897E07008C2BCB /* FeedItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
+		A3BFA7232589933E008C2BCB /* MediaPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewCell.swift; sourceTree = "<group>"; };
+		A3BFA726258994A9008C2BCB /* CoverPhotoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPhotoImageView.swift; sourceTree = "<group>"; };
+		A3BFA72A258994D8008C2BCB /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		A3BFA73025899780008C2BCB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,8 @@
 		A3BFA6C125891E0B008C2BCB /* JetFuelTakeHome */ = {
 			isa = PBXGroup;
 			children = (
+				A3BFA72F2589976E008C2BCB /* Utilities */,
+				A3BFA729258994BE008C2BCB /* Extensions */,
 				A3BFA6FC25896E8D008C2BCB /* Custom Views */,
 				A3BFA6F525894630008C2BCB /* Support */,
 				A3BFA6EF258945E3008C2BCB /* Models */,
@@ -130,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				A3BFA71C25897E07008C2BCB /* FeedItemCell.swift */,
+				A3BFA7232589933E008C2BCB /* MediaPreviewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				A3BFA70825897101008C2BCB /* JFImageView.swift */,
+				A3BFA726258994A9008C2BCB /* CoverPhotoImageView.swift */,
 			);
 			path = ImageViews;
 			sourceTree = "<group>";
@@ -157,6 +169,22 @@
 				A3BFA71025897569008C2BCB /* JFSecondaryTitleLabel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		A3BFA729258994BE008C2BCB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A3BFA72A258994D8008C2BCB /* UIImageView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A3BFA72F2589976E008C2BCB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A3BFA73025899780008C2BCB /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,12 +259,16 @@
 				A3BFA6E42589381D008C2BCB /* NetworkManager.swift in Sources */,
 				A3BFA71125897569008C2BCB /* JFSecondaryTitleLabel.swift in Sources */,
 				A3BFA70925897101008C2BCB /* JFImageView.swift in Sources */,
+				A3BFA727258994A9008C2BCB /* CoverPhotoImageView.swift in Sources */,
 				A3BFA70E2589742B008C2BCB /* JFTitleLabel.swift in Sources */,
 				A3BFA71D25897E07008C2BCB /* FeedItemCell.swift in Sources */,
 				A3BFA6C325891E0B008C2BCB /* AppDelegate.swift in Sources */,
 				A3BFA70225896F76008C2BCB /* FeedItemHeaderView.swift in Sources */,
+				A3BFA72B258994D8008C2BCB /* UIImageView+Ext.swift in Sources */,
 				A3BFA6DD25892064008C2BCB /* FeedViewController.swift in Sources */,
 				A3BFA6F125894603008C2BCB /* Campaigns.swift in Sources */,
+				A3BFA73125899780008C2BCB /* Constants.swift in Sources */,
+				A3BFA7242589933E008C2BCB /* MediaPreviewCell.swift in Sources */,
 				A3BFA6C525891E0B008C2BCB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
