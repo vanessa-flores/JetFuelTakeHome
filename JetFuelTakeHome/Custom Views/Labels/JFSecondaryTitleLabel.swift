@@ -18,10 +18,8 @@ class JFSecondaryTitleLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
         
-    convenience init(fontSize: CGFloat, textColor: UIColor) {
+    convenience init() {
         self.init(frame: .zero)
-        font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
-        self.textColor = textColor
     }
         
     private func configure() {

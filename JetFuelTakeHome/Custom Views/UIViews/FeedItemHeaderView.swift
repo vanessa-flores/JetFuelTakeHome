@@ -13,7 +13,7 @@ class FeedItemHeaderView: UIView {
     
     let imageView = JFImageView(frame: .zero)
     let titleLabel = JFTitleLabel(fontSize: 22)
-    let secondaryLabel = JFSecondaryTitleLabel(fontSize: 17, textColor: .systemGreen)
+    let secondaryLabel = JFSecondaryTitleLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,7 +73,17 @@ class FeedItemHeaderView: UIView {
     func setFeedItem(_ feedItem: FeedItem) {
         imageView.setImage(fromURL: feedItem.campaignIconUrl ?? "")
         titleLabel.text = feedItem.companyName
-        secondaryLabel.text = feedItem.payPerInstall
+        secondaryLabel.attributedText = payPerInstallNSMutableAttributedString(for: feedItem.payPerInstall ?? "")
+    }
+    
+    private func payPerInstallNSMutableAttributedString(for payPerInstall: String) -> NSMutableAttributedString{
+        let payPerInstallString = payPerInstall + " per install"
+        let attributedString = NSMutableAttributedString(string: payPerInstallString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGreen])
+        let range = NSRange(location: 0, length: payPerInstall.count)
+        let font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        attributedString.addAttribute(.font, value: font, range: range)
+        
+        return attributedString
     }
     
 }

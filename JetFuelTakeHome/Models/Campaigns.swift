@@ -18,8 +18,8 @@ struct Campaign: Codable {
 
 struct FeedItem: Codable {
     
-    let id: Int?
-    let companyName: String?
+    let id: Int
+    let companyName: String
     var payPerInstall: String?
     var campaignIconUrl: String?
     var mediaObjects: [MediaItem]
