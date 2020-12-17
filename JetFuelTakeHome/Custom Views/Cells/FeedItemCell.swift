@@ -78,6 +78,7 @@ class FeedItemCell: UITableViewCell {
         collectionView.layer.borderWidth = 1
         collectionView.layer.borderColor = UIColor.systemGray5.cgColor
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsHorizontalScrollIndicator = false
         
         addSubview(collectionView)
         

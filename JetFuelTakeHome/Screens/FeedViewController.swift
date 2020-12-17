@@ -111,6 +111,8 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return feedItems[collectionView.tag].mediaObjects.count
@@ -120,7 +122,6 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaPreviewCell.reuseId, for: indexPath) as! MediaPreviewCell
         let mediaItem = feedItems[collectionView.tag].mediaObjects[indexPath.row]
         cell.set(mediaItem)
-        cell.contentView.isUserInteractionEnabled = false
         
         return cell
     }
