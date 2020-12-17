@@ -81,8 +81,6 @@ class FeedItemCell: UITableViewCell {
         
         addSubview(collectionView)
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
         collectionView.register(MediaPreviewCell.self, forCellWithReuseIdentifier: MediaPreviewCell.reuseId)
     }
     
@@ -106,27 +104,11 @@ class FeedItemCell: UITableViewCell {
         self.feedItem = feedItem
     }
     
-}
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-
-extension FeedItemCell: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feedItem?.mediaObjects.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaPreviewCell.reuseId, for: indexPath) as! MediaPreviewCell
-        
-        if let currentFeedItem = feedItem {
-            print("Row \(indexPath.row)")
-            let mediaItem = currentFeedItem.mediaObjects[indexPath.row]
-            cell.set(mediaItem)
-        }
-        
-        cell.contentView.isUserInteractionEnabled = false
-        
-        return cell
+    func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
+        collectionView.delegate = dataSourceDelegate
+        collectionView.dataSource = dataSourceDelegate
+        collectionView.tag = row
+        collectionView.reloadData()
     }
     
 }

@@ -99,6 +99,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let cell = cell as? FeedItemCell else { return }
         
+        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
     }
     
@@ -107,5 +108,22 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         storedOffsets[indexPath.row] = cell.collectionViewOffset
     }
+    
+}
+
+extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return feedItems[collectionView.tag].mediaObjects.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaPreviewCell.reuseId, for: indexPath) as! MediaPreviewCell
+        let mediaItem = feedItems[collectionView.tag].mediaObjects[indexPath.row]
+        cell.set(mediaItem)
+        cell.contentView.isUserInteractionEnabled = false
+        
+        return cell
+    }
+    
     
 }
