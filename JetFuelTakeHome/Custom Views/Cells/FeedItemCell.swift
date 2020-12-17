@@ -8,16 +8,28 @@
 import UIKit
 
 class FeedItemCell: UITableViewCell {
-
-    // MARK: - Properties
-    
-    static let reuseId = "FeedItemCell"
-    var feedItem: FeedItem?
     
     // MARK: - Views
     
     let feedItemHeader = FeedItemHeaderView(frame: .zero)
     var collectionView: UICollectionView!
+    
+    // MARK: - Properties
+    
+    static let reuseId = "FeedItemCell"
+    var feedItem: FeedItem?
+    
+    // MARK: - Computed Properties
+    
+    var collectionViewOffset: CGFloat {
+        get {
+            return collectionView.contentOffset.x
+        }
+        
+        set {
+            collectionView.contentOffset.x = newValue
+        }
+    }
     
     // MARK: - Intializers
         
@@ -50,16 +62,7 @@ class FeedItemCell: UITableViewCell {
     }
     
     private func configureCollectionView() {
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout(in: self))
-        collectionView.backgroundColor = .secondarySystemBackground
-        collectionView.layer.borderWidth = 1
-        collectionView.layer.borderColor = UIColor.systemGray5.cgColor
-        addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(MediaPreviewCell.self, forCellWithReuseIdentifier: MediaPreviewCell.reuseId)
+        setUpCollectionView()
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: feedItemHeader.bottomAnchor),
@@ -67,6 +70,20 @@ class FeedItemCell: UITableViewCell {
             collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
+    }
+    
+    private func setUpCollectionView() {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout(in: self))
+        collectionView.backgroundColor = .secondarySystemBackground
+        collectionView.layer.borderWidth = 1
+        collectionView.layer.borderColor = UIColor.systemGray5.cgColor
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(collectionView)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(MediaPreviewCell.self, forCellWithReuseIdentifier: MediaPreviewCell.reuseId)
     }
     
     private func createCollectionViewLayout(in view: UIView) -> UICollectionViewFlowLayout {
@@ -102,12 +119,14 @@ extension FeedItemCell: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaPreviewCell.reuseId, for: indexPath) as! MediaPreviewCell
         
         if let currentFeedItem = feedItem {
+            print("Row \(indexPath.row)")
             let mediaItem = currentFeedItem.mediaObjects[indexPath.row]
             cell.set(mediaItem)
         }
         
+        cell.contentView.isUserInteractionEnabled = false
+        
         return cell
     }
-    
     
 }

@@ -16,6 +16,7 @@ class FeedViewController: UIViewController {
     // MARK: - Properties
     
     var feedItems: [FeedItem] = []
+    var storedOffsets: [Int: CGFloat] = [:]
     
     //MARK: - Lifecycle
 
@@ -90,8 +91,21 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedItemCell.reuseId) as! FeedItemCell
         cell.set(feedItem: feedItem)
         cell.selectionStyle = .none
+        cell.contentView.isUserInteractionEnabled = false
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? FeedItemCell else { return }
+        
+        cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? FeedItemCell else { return }
+        
+        storedOffsets[indexPath.row] = cell.collectionViewOffset
     }
     
 }
