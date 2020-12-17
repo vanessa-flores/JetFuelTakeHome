@@ -42,5 +42,11 @@ class JFButton: UIButton {
         layer.borderWidth = 1
         layer.borderColor = UIColor.systemGray5.cgColor
     }
+    
+    // MARK: - Actions
+    
+    func setAction(action: UIAction) {
+        self.addAction(action, for: .touchUpInside)
+    }
 
 }

@@ -38,6 +38,7 @@ class MediaPreviewCell: UICollectionViewCell {
         configurePlayButton()
         configureCopyLinkButton()
         configureDownloadButton()
+        setButtonPressedActions()
     }
     
     private func configureCoverPhotoImageView() {
@@ -91,6 +92,40 @@ class MediaPreviewCell: UICollectionViewCell {
             downloadButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
+    
+    // MARK: - Actions
+    
+    private func setButtonPressedActions() {
+        playButton.setAction(action: playAction())
+        copyLinkButton.setAction(action: copyLinkAction())
+        downloadButton.setAction(action: downloadAction())
+    }
+    
+    private func playAction() -> UIAction {
+        let action = UIAction(handler: { _ in
+            print("Play button pressed")
+        })
+        
+        return action
+    }
+    
+    private func copyLinkAction() -> UIAction {
+        let action = UIAction(handler: { _ in
+            print("Copy link button pressed")
+        })
+        
+        return action
+    }
+    
+    private func downloadAction() -> UIAction {
+        let action = UIAction(handler: { _ in
+            print("Download button pressed")
+        })
+        
+        return action
+    }
+    
+    
     
     // MARK: - Helpers
     
