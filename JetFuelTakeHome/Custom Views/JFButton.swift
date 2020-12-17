@@ -47,8 +47,8 @@ class JFButton: UIButton {
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 50),
-            self.widthAnchor.constraint(equalToConstant: 50)
+            self.heightAnchor.constraint(equalToConstant: 55),
+            self.widthAnchor.constraint(equalToConstant: 55)
         ])
     }
 

@@ -48,7 +48,7 @@ class MediaPreviewCell: UICollectionViewCell {
             coverPhotoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             coverPhotoImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             coverPhotoImageView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            coverPhotoImageView.widthAnchor.constraint(equalToConstant: 100),
+            coverPhotoImageView.widthAnchor.constraint(equalToConstant: 110),
             coverPhotoImageView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
@@ -57,14 +57,10 @@ class MediaPreviewCell: UICollectionViewCell {
         addSubview(playButton)
         playButton.tintColor = .white
         playButton.backgroundColor = .clear
-//        playButton.setImage(SFSymbols.play, for: .normal)
-//        playButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             playButton.centerYAnchor.constraint(equalTo: coverPhotoImageView.centerYAnchor),
             playButton.centerXAnchor.constraint(equalTo: coverPhotoImageView.centerXAnchor)
-//            playButton.heightAnchor.constraint(equalToConstant: 50),
-//            playButton.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -74,7 +70,7 @@ class MediaPreviewCell: UICollectionViewCell {
         copyLinkButton.tintColor = .systemGray
         
         NSLayoutConstraint.activate([
-            copyLinkButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 16),
+            copyLinkButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 6),
             copyLinkButton.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         ])
     }
@@ -85,7 +81,7 @@ class MediaPreviewCell: UICollectionViewCell {
         downloadButton.tintColor = .systemGray
 
         NSLayoutConstraint.activate([
-            downloadButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 16),
+            downloadButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 6),
             downloadButton.leadingAnchor.constraint(equalTo: copyLinkButton.trailingAnchor, constant: -1),
             downloadButton.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])

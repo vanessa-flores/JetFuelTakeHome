@@ -40,20 +40,20 @@ class FeedItemCell: UITableViewCell {
     private func configureHeader() {
         addSubview(feedItemHeader)
         feedItemHeader.translatesAutoresizingMaskIntoConstraints = false
-        
-        feedItemHeader.backgroundColor = .systemPink
-                
+                        
         NSLayoutConstraint.activate([
             feedItemHeader.topAnchor.constraint(equalTo: self.topAnchor),
             feedItemHeader.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             feedItemHeader.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            feedItemHeader.heightAnchor.constraint(equalToConstant: 102)
+            feedItemHeader.heightAnchor.constraint(equalToConstant: 110)
         ])
     }
     
     private func configureCollectionView() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout(in: self))
-        collectionView.backgroundColor = .systemGray6
+        collectionView.backgroundColor = .secondarySystemBackground
+        collectionView.layer.borderWidth = 1
+        collectionView.layer.borderColor = UIColor.systemGray5.cgColor
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -70,13 +70,14 @@ class FeedItemCell: UITableViewCell {
     }
     
     private func createCollectionViewLayout(in view: UIView) -> UICollectionViewFlowLayout {
-        let padding: CGFloat = 16
-        let itemHeight: CGFloat = 260
+        let padding: CGFloat = 20
+        let itemWidth: CGFloat = 110
+        let itemHeight: CGFloat = 261
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        flowLayout.itemSize = CGSize(width: 100, height: itemHeight)
+        flowLayout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         
         return flowLayout
     }

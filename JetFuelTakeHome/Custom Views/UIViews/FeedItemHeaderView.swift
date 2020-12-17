@@ -36,7 +36,7 @@ class FeedItemHeaderView: UIView {
         addSubview(imageView)
         
         let imageSize: CGFloat = 70
-        let padding: CGFloat = 16
+        let padding: CGFloat = 20
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
