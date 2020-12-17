@@ -89,9 +89,9 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedItemCell.reuseId) as! FeedItemCell
         cell.set(feedItem: feedItem)
+        cell.selectionStyle = .none
         
         return cell
     }
-    
     
 }
