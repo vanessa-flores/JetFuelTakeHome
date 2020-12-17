@@ -60,7 +60,9 @@ class MediaPreviewCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             playButton.centerYAnchor.constraint(equalTo: coverPhotoImageView.centerYAnchor),
-            playButton.centerXAnchor.constraint(equalTo: coverPhotoImageView.centerXAnchor)
+            playButton.centerXAnchor.constraint(equalTo: coverPhotoImageView.centerXAnchor),
+            playButton.heightAnchor.constraint(equalToConstant: 55),
+            playButton.widthAnchor.constraint(equalToConstant: 55)
         ])
     }
     
@@ -71,7 +73,9 @@ class MediaPreviewCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             copyLinkButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 6),
-            copyLinkButton.leadingAnchor.constraint(equalTo: self.leadingAnchor)
+            copyLinkButton.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            copyLinkButton.heightAnchor.constraint(equalToConstant: 55),
+            copyLinkButton.widthAnchor.constraint(equalToConstant: 55)
         ])
     }
     
@@ -83,7 +87,8 @@ class MediaPreviewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             downloadButton.topAnchor.constraint(equalTo: coverPhotoImageView.bottomAnchor, constant: 6),
             downloadButton.leadingAnchor.constraint(equalTo: copyLinkButton.trailingAnchor, constant: -1),
-            downloadButton.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            downloadButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            downloadButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
     

@@ -36,20 +36,11 @@ class JFButton: UIButton {
         layer.cornerRadius = 5
         layer.backgroundColor = UIColor.systemBackground.cgColor
         translatesAutoresizingMaskIntoConstraints = false
-        
-        setConstraints()
     }
     
     func setBorder() {
         layer.borderWidth = 1
         layer.borderColor = UIColor.systemGray5.cgColor
-    }
-    
-    func setConstraints() {
-        NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 55),
-            self.widthAnchor.constraint(equalToConstant: 55)
-        ])
     }
 
 }
