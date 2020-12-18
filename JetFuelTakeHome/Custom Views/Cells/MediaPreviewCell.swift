@@ -19,6 +19,7 @@ class MediaPreviewCell: UICollectionViewCell {
     // MARK: - Properties
     
     static let reuseId = "MediaPreviewCell"
+    var trackingLink: String?
     
     // MARK: - Initializers
     
@@ -121,8 +122,11 @@ class MediaPreviewCell: UICollectionViewCell {
     }
     
     private func copyLinkAction() -> UIAction {
-        let action = UIAction(handler: { _ in
-            print("Copy link button pressed")
+        let action = UIAction(handler: { [weak self] _ in
+            guard let self = self else { return }
+            
+            let pasteboard = UIPasteboard.general
+            pasteboard.string = self.trackingLink
         })
         
         return action
@@ -142,6 +146,7 @@ class MediaPreviewCell: UICollectionViewCell {
     
     func set(_ mediaItem: MediaItem) {
         coverPhotoImageView.setImage(fromURL: mediaItem.coverPhotoUrl ?? "")
+        trackingLink = mediaItem.trackingLink
         
         if mediaItem.mediaType == "video" {
             showPlayButton()
