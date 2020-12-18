@@ -83,4 +83,23 @@ class NetworkManager {
         
         task.resume()
     }
+    
+    func downloadMedia(from urlString: String, completion: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: urlString) else {
+            print("Invalid media url")
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in            
+            guard error == nil, let response = response as? HTTPURLResponse, response.statusCode == 200,
+                  let data = data, let media = UIImage(data: data) else {
+                print("Error getting media")
+                return
+            }
+                        
+            completion(media)
+        }
+        
+        task.resume()
+    }
 }

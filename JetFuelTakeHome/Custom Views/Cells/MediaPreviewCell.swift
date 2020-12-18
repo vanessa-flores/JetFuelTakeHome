@@ -20,6 +20,7 @@ class MediaPreviewCell: UICollectionViewCell {
     
     static let reuseId = "MediaPreviewCell"
     var trackingLink: String?
+    var downloadUrl: String?
     
     // MARK: - Initializers
     
@@ -133,8 +134,15 @@ class MediaPreviewCell: UICollectionViewCell {
     }
     
     private func downloadAction() -> UIAction {
-        let action = UIAction(handler: { _ in
-            print("Download button pressed")
+        let action = UIAction(handler: { [weak self] _ in
+            guard let self = self else { return }
+            NetworkManager.shared.downloadMedia(from: self.downloadUrl ?? "") { image in
+                guard let image = image else { return }
+                
+                print(self.downloadUrl)
+                print(image)
+//                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            }
         })
         
         return action
@@ -147,6 +155,7 @@ class MediaPreviewCell: UICollectionViewCell {
     func set(_ mediaItem: MediaItem) {
         coverPhotoImageView.setImage(fromURL: mediaItem.coverPhotoUrl ?? "")
         trackingLink = mediaItem.trackingLink
+        downloadUrl = mediaItem.downloadUrl
         
         if mediaItem.mediaType == "video" {
             showPlayButton()
