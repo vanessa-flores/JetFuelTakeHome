@@ -17,7 +17,6 @@ class FeedItemCell: UITableViewCell {
     // MARK: - Properties
     
     static let reuseId = "FeedItemCell"
-    var feedItem: FeedItem?
     
     // MARK: - Computed Properties
     
@@ -102,7 +101,6 @@ class FeedItemCell: UITableViewCell {
     
     func set(feedItem: FeedItem) {
         feedItemHeader.setFeedItem(feedItem)
-        self.feedItem = feedItem
     }
     
     func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {

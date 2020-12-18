@@ -58,13 +58,24 @@ class MediaPreviewCell: UICollectionViewCell {
         addSubview(playButton)
         playButton.tintColor = .white
         playButton.backgroundColor = .clear
+        playButton.isHidden = true
+        setPlayButtonSize()
         
         NSLayoutConstraint.activate([
             playButton.centerYAnchor.constraint(equalTo: coverPhotoImageView.centerYAnchor),
             playButton.centerXAnchor.constraint(equalTo: coverPhotoImageView.centerXAnchor),
-            playButton.heightAnchor.constraint(equalToConstant: 55),
-            playButton.widthAnchor.constraint(equalToConstant: 55)
+            playButton.heightAnchor.constraint(equalToConstant: 50),
+            playButton.widthAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    private func setPlayButtonSize() {
+        playButton.contentHorizontalAlignment = .fill
+        playButton.contentVerticalAlignment = .fill
+        playButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        
+        let inset: CGFloat = 10
+        playButton.imageEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
     }
     
     private func configureCopyLinkButton() {
@@ -131,5 +142,14 @@ class MediaPreviewCell: UICollectionViewCell {
     
     func set(_ mediaItem: MediaItem) {
         coverPhotoImageView.setImage(fromURL: mediaItem.coverPhotoUrl ?? "")
+        
+        if mediaItem.mediaType == "video" {
+            showPlayButton()
+        }
+        
+    }
+    
+    private func showPlayButton() {
+        playButton.isHidden = false
     }
 }
